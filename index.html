@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FishStore — أسماك الزينة والأحواض ومستلزماتها في تونس</title>
+  <meta name="description" content="FishStore: أسماك زينة، أحواض، فلاتر، أغذية وديكورات. توصيل لكل ولايات تونس والدفع عند الاستلام." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- شريط الإعلانات -->
+  <div class="announce" aria-label="إعلانات">
+    <div class="announce-track">
+      <span>🐟 أسماك حية بتغليف خاص وآمن</span>
+      <span>🚚 توصيل لكل ولايات تونس</span>
+      <span>💵 الدفع عند الاستلام</span>
+      <span>✨ أول طلب؟ استعمل الكود <b>WELCOME10</b> واحصل على خصم 10%</span>
+      <span>🐟 أسماك حية بتغليف خاص وآمن</span>
+      <span>🚚 توصيل لكل ولايات تونس</span>
+      <span>💵 الدفع عند الاستلام</span>
+      <span>✨ أول طلب؟ استعمل الكود <b>WELCOME10</b> واحصل على خصم 10%</span>
+    </div>
+  </div>
+
+  <!-- ============ الرأس ============ -->
+  <header class="header" id="header">
+    <div class="container header-row">
+      <a href="#top" class="logo" aria-label="FishStore">
+        <span class="logo-mark">
+          <svg width="28" height="28" viewBox="0 0 140 100" aria-hidden="true"><path d="M96 50 L132 22 Q122 50 132 78Z" fill="#fff"/><ellipse cx="60" cy="50" rx="46" ry="29" fill="#fff"/><circle cx="36" cy="44" r="7.5" fill="#159bcc"/></svg>
+        </span>
+        <span class="logo-text">FishStore<small>متجر الأسماك</small></span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="القائمة الرئيسية">
+        <a href="#top">الرئيسية</a>
+        <a href="#shop" data-cat="all">المنتجات</a>
+        <a href="#offers">العروض</a>
+        <a href="#tips">نصائح</a>
+        <a href="#faq">الأسئلة الشائعة</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-btn" id="cartBtn" aria-label="فتح السلة">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l-1 13H7L6 7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+          <span class="count" id="cartCount">0</span>
+        </button>
+        <button class="icon-btn menu-btn" id="menuBtn" aria-label="فتح القائمة" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ============ الواجهة ============ -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <span class="pill">🐠 وصل جديد من الأسماك الملوّنة</span>
+          <h1>أسماك زينة وأحواض <em>تُسعد بيتك</em></h1>
+          <p>أسماك بألوان رائعة، أحواض ومعدات وأغذية بجودة عالية، مع توصيل لكل ولايات تونس والدفع عند الاستلام.</p>
+          <div class="hero-buttons">
+            <a href="#shop" class="btn btn-primary" data-cat="fish">تسوّق الأسماك</a>
+            <a href="#tips" class="btn btn-outline">نصائح للمبتدئين</a>
+          </div>
+          <div class="hero-trust">
+            <div><strong>+5 آلاف</strong><span>حريف سعيد</span></div>
+            <div><strong>4.9 ★</strong><span>متوسط التقييم</span></div>
+            <div><strong>+60</strong><span>نوع من الأسماك</span></div>
+          </div>
+        </div>
+
+        <div class="hero-art" aria-hidden="true">
+          <div class="hero-circle"></div>
+          <span class="bubble" style="--x:30%;--s:14px;--d:0s"></span>
+          <span class="bubble" style="--x:44%;--s:9px;--d:1.6s"></span>
+          <span class="bubble" style="--x:58%;--s:16px;--d:3s"></span>
+          <span class="bubble" style="--x:70%;--s:10px;--d:4.4s"></span>
+          <span class="bubble" style="--x:38%;--s:8px;--d:5.6s"></span>
+          <div class="hero-item h1" data-art="tank" data-c="#ff8a3d"></div>
+          <div class="hero-item h2" data-art="fish" data-c="#ff8a3d" data-d="#ffd27a"></div>
+          <div class="hero-item h3" data-art="betta" data-c="#e0483d" data-d="#7a2bd9"></div>
+          <div class="hero-badge">-30%<small>على باقات الأحواض</small></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ المزايا ============ -->
+    <section class="perks">
+      <div class="container perks-grid">
+        <div class="perk"><span>🐟</span><div><strong>تغليف آمن</strong><small>للأسماك الحية</small></div></div>
+        <div class="perk"><span>🚚</span><div><strong>توصيل لكل تونس</strong><small>بأسرع وقت ممكن</small></div></div>
+        <div class="perk"><span>💵</span><div><strong>الدفع عند الاستلام</strong><small>ادفع بعد أن تستلم طلبك</small></div></div>
+        <div class="perk"><span>💬</span><div><strong>نصائح مجانية</strong><small>من مختصين على واتساب</small></div></div>
+      </div>
+    </section>
+
+    <!-- ============ المنتجات ============ -->
+    <section class="section" id="shop">
+      <div class="container">
+        <h2 class="title">جميع المنتجات</h2>
+
+        <div class="toolbar">
+          <div class="chips" id="chips">
+            <button class="chip active" data-cat="all">الكل</button>
+            <button class="chip" data-cat="fish">الأسماك</button>
+            <button class="chip" data-cat="tank">الأحواض</button>
+            <button class="chip" data-cat="equip">المعدات</button>
+            <button class="chip" data-cat="food">الأغذية</button>
+            <button class="chip" data-cat="decor">الديكور والنباتات</button>
+            <button class="chip" data-cat="care">العناية بالمياه</button>
+            <button class="chip" data-cat="packs">الباقات</button>
+          </div>
+          <div class="tools">
+            <input type="search" id="searchInput" placeholder="ابحث عن منتج…" aria-label="ابحث عن منتج" />
+            <label class="sort">
+              <span>ترتيب حسب:</span>
+              <select id="sortSelect">
+                <option value="default">افتراضي</option>
+                <option value="price-asc">السعر: من الأقل للأعلى</option>
+                <option value="price-desc">السعر: من الأعلى للأقل</option>
+                <option value="rating">الأعلى تقييماً</option>
+              </select>
+            </label>
+          </div>
+        </div>
+
+        <div class="products" id="products" aria-live="polite"></div>
+        <p class="empty" id="empty" hidden>لم نجد منتجات مطابقة. جرّب بحثاً آخر.</p>
+      </div>
+    </section>
+
+    <!-- ============ العروض ============ -->
+    <section class="section tight" id="offers">
+      <div class="container">
+        <div class="offer">
+          <div>
+            <span class="pill pill-light">عرض محدود</span>
+            <h2>باقة المبتدئ: كل ما يلزمك لحوضك الأول</h2>
+            <p>حوض كامل مع الفلتر والمدفأة وغذاء السمك ومكيّف المياه، بسعر أقل من شرائها منفصلة.</p>
+            <a href="#shop" class="btn btn-light" data-cat="packs">شاهد الباقات</a>
+          </div>
+          <div class="offer-art" aria-hidden="true">
+            <div class="o1" data-art="filter" data-c="#29b6e8"></div>
+            <div class="o2" data-art="tank" data-c="#ff8a3d"></div>
+            <div class="o3" data-art="food" data-c="#ffc247"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ النصائح ============ -->
+    <section class="section" id="tips">
+      <div class="container">
+        <h2 class="title">نصائح للمبتدئين</h2>
+        <ol class="steps">
+          <li class="step"><span>1</span><h3>جهّز الحوض أولاً</h3><p>شغّل الفلتر وأضف مكيّف المياه وانتظر قبل إدخال الأسماك.</p></li>
+          <li class="step"><span>2</span><h3>عوّد السمك تدريجياً</h3><p>اترك كيس السمكة طافياً في الحوض مدة قبل إطلاقها.</p></li>
+          <li class="step"><span>3</span><h3>لا تُفرط في الطعام</h3><p>قدّم كمية صغيرة مرة أو مرتين في اليوم فقط.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ الآراء ============ -->
+    <section class="section alt">
+      <div class="container">
+        <h2 class="title">آراء حرفائنا</h2>
+        <div class="reviews">
+          <figure class="review"><div class="stars">★★★★★</div><blockquote>«الأسماك وصلت بصحة ممتازة والتغليف محترم. ألوانها أجمل من الصور.»</blockquote><figcaption><span class="avatar">س</span>سامي — تونس</figcaption></figure>
+          <figure class="review"><div class="stars">★★★★★</div><blockquote>«اشتريت باقة المبتدئ وساعدوني في تركيب الحوض عبر واتساب. شكراً!»</blockquote><figcaption><span class="avatar">م</span>مريم — سوسة</figcaption></figure>
+          <figure class="review"><div class="stars">★★★★★</div><blockquote>«أسعار معقولة وتشكيلة كبيرة. الدفع عند الاستلام أعطاني ثقة.»</blockquote><figcaption><span class="avatar">أ</span>أيمن — صفاقس</figcaption></figure>
+        </div>
+        <p class="note">آراء تجريبية — عوّضها بآراء حرفائك الحقيقيين.</p>
+      </div>
+    </section>
+
+    <!-- ============ الأسئلة الشائعة ============ -->
+    <section class="section" id="faq">
+      <div class="container narrow">
+        <h2 class="title">الأسئلة الشائعة</h2>
+        <details class="faq" open><summary>كيف تصلني الأسماك الحية؟</summary><p>نغلّف الأسماك في أكياس خاصة وصناديق عازلة ونوصّلها بأسرع وقت ممكن لكل ولايات تونس.</p></details>
+        <details class="faq"><summary>هل يجب أن يكون عندي حوض قبل الطلب؟</summary><p>نعم، يُفضّل تجهيز الحوض والفلتر قبل وصول الأسماك. يمكنك أخذ باقة المبتدئ لتجد كل شيء جاهزاً.</p></details>
+        <details class="faq"><summary>هل يمكنني الدفع عند الاستلام؟</summary><p>نعم، الدفع نقداً عند استلام الطلب دون أي دفع مسبق.</p></details>
+        <details class="faq"><summary>كم سعر التوصيل؟</summary><p>التوصيل مجاني للطلبات التي تفوق 150 د.ت، وإلا فسعره 7 د.ت.</p></details>
+        <details class="faq"><summary>هل تقدمون نصائح للمبتدئين؟</summary><p>طبعاً! راسلنا على واتساب ونساعدك في اختيار الأسماك والمعدات المناسبة.</p></details>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ التذييل ============ -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <a href="#top" class="logo">
+          <span class="logo-mark"><svg width="28" height="28" viewBox="0 0 140 100" aria-hidden="true"><path d="M96 50 L132 22 Q122 50 132 78Z" fill="#fff"/><ellipse cx="60" cy="50" rx="46" ry="29" fill="#fff"/><circle cx="36" cy="44" r="7.5" fill="#159bcc"/></svg></span>
+          <span class="logo-text">FishStore<small>متجر الأسماك</small></span>
+        </a>
+        <p>أسماك زينة وأحواض ومستلزماتها، نوصّلها لباب دارك في كامل تونس.</p>
+      </div>
+      <div><h4>روابط</h4><ul><li><a href="#shop">المنتجات</a></li><li><a href="#offers">العروض</a></li><li><a href="#faq">الأسئلة الشائعة</a></li></ul></div>
+      <div><h4>تواصل معنا</h4><ul><li>📞 <a href="tel:+21600000000" dir="ltr">+216 00 000 000</a></li><li>✉️ <a href="mailto:hello@fishstore.tn">hello@fishstore.tn</a></li><li>📍 تونس العاصمة</li></ul></div>
+      <div><h4>تابعنا</h4><ul><li><a href="#">إنستغرام</a></li><li><a href="#">فيسبوك</a></li><li><a href="#">تيك توك</a></li></ul></div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© <span id="year"></span> FishStore. جميع الحقوق محفوظة.</p>
+      <p>الدفع عند الاستلام · توصيل لكل تونس</p>
+    </div>
+  </footer>
+
+  <!-- ============ السلة ============ -->
+  <div class="overlay" id="overlay"></div>
+  <aside class="drawer" id="drawer" aria-label="سلة التسوق" aria-hidden="true">
+    <div class="drawer-head"><h3>سلة التسوق</h3><button class="icon-btn" id="closeCart" aria-label="إغلاق">✕</button></div>
+    <div class="ship-progress"><p id="shipText"></p><div class="bar"><span id="shipBar"></span></div></div>
+    <div class="drawer-body" id="cartItems"></div>
+    <div class="drawer-foot">
+      <div class="row"><span>المجموع الفرعي</span><strong id="subTotal">0</strong></div>
+      <div class="row"><span>التوصيل</span><strong id="shipCost">—</strong></div>
+      <div class="row total"><span>المجموع</span><strong id="grandTotal">0</strong></div>
+      <button class="btn btn-primary btn-block" id="checkoutBtn">إتمام الطلب</button>
+      <button class="link-btn" id="continueBtn">متابعة التسوق</button>
+    </div>
+  </aside>
+
+  <!-- ============ نافذة الطلب ============ -->
+  <div class="modal" id="orderModal" aria-hidden="true">
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="orderTitle">
+      <button class="icon-btn modal-close" id="closeOrder" aria-label="إغلاق">✕</button>
+
+      <form id="orderForm" novalidate>
+        <h3 id="orderTitle">معلومات التوصيل</h3>
+        <p class="muted">الدفع عند الاستلام — لا حاجة لأي دفع مسبق.</p>
+        <div class="field"><label for="oName">الاسم الكامل</label><input id="oName" name="name" type="text" autocomplete="name" /><small class="err"></small></div>
+        <div class="field"><label for="oPhone">رقم الهاتف</label><input id="oPhone" name="phone" type="tel" inputmode="numeric" placeholder="مثال: 22 123 456" dir="ltr" autocomplete="tel" /><small class="err"></small></div>
+        <div class="field"><label for="oGov">الولاية</label><select id="oGov" name="gov"></select><small class="err"></small></div>
+        <div class="field"><label for="oAddr">العنوان الكامل</label><textarea id="oAddr" name="addr" rows="3"></textarea><small class="err"></small></div>
+        <div class="summary" id="orderSummary"></div>
+        <button class="btn btn-primary btn-block" type="submit">تأكيد الطلب</button>
+      </form>
+
+      <div class="success" id="orderSuccess" hidden>
+        <div class="success-icon">✓</div>
+        <h3>تم استلام طلبك!</h3>
+        <p id="successText"></p>
+        <button class="btn btn-primary" id="doneBtn">حسناً</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
