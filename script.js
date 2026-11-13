@@ -7,6 +7,7 @@
   "use strict";
 
   /* ---------- الإعدادات ---------- */
+  const SHEET_URL = "https://script.google.com/macros/s/AKfycbwln29MDvCxCnuSIre5vXDxtr6K-3vgccSUlFZhqnexQCghKkl3AKjEA_WkZWU3zFHbvg/exec";
   const CURRENCY = "د.ت";
   const FREE_DELIVERY = 150;    // توصيل مجاني فوق هذا المبلغ
   const DELIVERY_FEE = 7;       // سعر التوصيل
@@ -307,26 +308,44 @@
   }
   $$("input, select, textarea", form).forEach((el) => el.addEventListener("blur", () => check(el)));
 
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const ok = $$("input, select, textarea", form).map(check).every(Boolean);
-    if (!ok) return;
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const ok = $$("input, select, textarea", form).map(check).every(Boolean);
+  if (!ok) return;
 
-    const sub = subtotal(), ship = shipping(sub), total = sub + ship;
-    const data = { name: form.name.value.trim(), phone: form.phone.value.trim(), gov: form.gov.value, addr: form.addr.value.trim() };
-    const lines = cart.map((i) => `• ${byId(i.id).name} × ${i.qty} = ${fmt(byId(i.id).price * i.qty)}`).join("\n");
-    const message = `طلب جديد 🐟\n${lines}\n\nالتوصيل: ${ship === 0 ? "مجاني" : fmt(ship)}\nالمجموع: ${fmt(total)}\n\nالاسم: ${data.name}\nالهاتف: ${data.phone}\nالولاية: ${data.gov}\nالعنوان: ${data.addr}`;
+  const sub = subtotal(), ship = shipping(sub), total = sub + ship;
+  const order = {
+    name: form.name.value.trim(),
+    phone: form.phone.value.trim(),
+    gov: form.gov.value,
+    addr: form.addr.value.trim(),
+    items: cart.map((i) => `${byId(i.id).name} × ${i.qty}`).join(" | "),
+    subtotal: sub,
+    shipping: ship,
+    total: total
+  };
 
-    /* TODO: أرسل الطلب إلى خادمك أو إلى Google Sheets / Formspree حتى تحتفظ به.
-       مثال: fetch("/api/orders", { method: "POST", body: JSON.stringify({ data, cart }) }) */
-    if (WHATSAPP) window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(message)}`, "_blank", "noopener");
+  const btn = form.querySelector('button[type="submit"]');
+  btn.disabled = true;
+  btn.textContent = "جارٍ الإرسال…";
 
-    $("#successText").textContent = WHATSAPP
-      ? "شكراً لك! سنتواصل معك لتأكيد الطلب قريباً."
-      : "شكراً لك! (نسخة تجريبية — اربط المتجر بخادم أو واتساب لاستقبال الطلبات الحقيقية.)";
-    form.hidden = true; $("#orderSuccess").hidden = false;
-    cart = []; saveCart(); form.reset();
-  });
+  fetch(SHEET_URL, {
+    method: "POST",
+    mode: "no-cors",
+    headers: { "Content-Type": "text/plain;charset=utf-8" },
+    body: JSON.stringify(order)
+  })
+    .then(() => {
+      $("#successText").textContent = "شكراً لك! تم استلام طلبك وسنتصل بك قريباً لتأكيده.";
+      form.hidden = true;
+      $("#orderSuccess").hidden = false;
+      cart = [];
+      saveCart();
+      form.reset();
+    })
+    .catch(() => toast("تعذّر إرسال الطلب. تحقق من الاتصال وحاول مرة أخرى."))
+    .finally(() => { btn.disabled = false; btn.textContent = "تأكيد الطلب"; });
+});
 
   /* ---------- البداية ---------- */
   $("#year").textContent = new Date().getFullYear();
