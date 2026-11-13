@@ -319,7 +319,7 @@ form.addEventListener("submit", (e) => {
     phone: form.phone.value.trim(),
     gov: form.gov.value,
     addr: form.addr.value.trim(),
-    items: cart.map((i) => `${byId(i.id).name} × ${i.qty}`).join(" ||*|| "),
+    items: cart.map((i) => `${byId(i.id).name} × ${i.qty}`).join(" | "),
     subtotal: sub,
     shipping: ship,
     total: total
